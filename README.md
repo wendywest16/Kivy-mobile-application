@@ -7,7 +7,7 @@ The app links to a Realtime Firebase database where recreational catch data is s
 
 An example of the packaged **.apk** is in my [Google Drive](https://drive.google.com/drive/folders/1i4SoU-VHveDU31Y8MAdPZqQrRvS_uyhb?usp=sharing)
 
-These videos give a quick rundown of the app functioning in Jupyter and on the cellphone:
+These **videos** give a quick rundown of the app functioning in Jupyter and on the cellphone:
 1. Crayfish cellphone.mp4
 2. Crayfish Firebase.mp4
 3. Crayfish Sql Matplotlib.mp4
