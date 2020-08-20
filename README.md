@@ -5,7 +5,7 @@ This mobile application demonstrates a platform to share information with recrea
 
 The app links to a Realtime Firebase database where recreational catch data is stored. The data is retrieved from Firebase and used to plot catches with matplotlib. 
 
-I have recorded 3 videos that show 1) how the app runs on a cellphone, 2) a quick rundown of the app using Firebase and 3) the use of a SQL database. 
+An example of the packaged **.apk** and a video of the app running on the phone can in my [Google Drive](https://drive.google.com/drive/folders/1i4SoU-VHveDU31Y8MAdPZqQrRvS_uyhb?usp=sharing)
 
 ## The following files were used to build the Firebase app:
 
@@ -23,6 +23,6 @@ I have recorded 3 videos that show 1) how the app runs on a cellphone, 2) a quic
 5. Buildozer.spec
 6. Video of a quick rundown of the app 
 
-An example of the packaged **.apk** and a video of the app running on the phone can in my [Google Drive](https://drive.google.com/drive/folders/1i4SoU-VHveDU31Y8MAdPZqQrRvS_uyhb?usp=sharing)
+
 
 
