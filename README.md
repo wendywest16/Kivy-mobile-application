@@ -7,12 +7,16 @@ The app links to a Realtime Firebase database where recreational catch data is s
 
 An example of the packaged **.apk** is in my [Google Drive](https://drive.google.com/drive/folders/1i4SoU-VHveDU31Y8MAdPZqQrRvS_uyhb?usp=sharing)
 
+These videos give a quick rundown of the app functioning in Jupyter and on the cellphone:
+1. Crayfish cellphone.mp4
+2. Crayfish Firebase.mp4
+3. Crayfish Sql Matplotlib.mp4
+
 ## The following files were used to build the Firebase app:
 
 1. CrayfishFirebase.py 
 2. CrayfishFirebase.kv
 3. Buildozer.spec
-4. Video of a quick rundown of the app
 
 ## The following files were used to build the SQL version of the app:
 
@@ -20,8 +24,6 @@ An example of the packaged **.apk** is in my [Google Drive](https://drive.google
 2. CrayfishSqlMat.kv
 3. RecCatches.py (creating the Sql database) 
 4. RecCatches.db 
-5. Buildozer.spec
-6. Video of a quick rundown of the app 
 
 
 
