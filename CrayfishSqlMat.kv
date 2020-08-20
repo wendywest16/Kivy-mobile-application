@@ -1,0 +1,1566 @@
+WindowManager:    
+    MainWindow:
+    SecondWindow:
+    ThirdWindow:
+    FourthWindow:    
+    FifthWindow:
+    SixthWindow:
+    SeventhWindow:
+    EighthWindow:
+    NinthWindow:
+    Namaqua:
+    StompneusShelly:
+    WestCoast:
+
+        
+<Popup>:
+    size_hint: None, None
+    size: 300, 350
+    title: "COVID-19 Update"
+    title_align: 'center'
+    font_name: 'MarkingPenRegular'
+    #font_size: '10sp'
+    pos_hint: {"x":0.2, "top": 0.7}
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "Directions on recreational fishing restrictions under Alert Level 3 of the Disaster Management Act , 2002, Regulations, are yet to be announced. Therefore the dates of the last two fishing days allocated to the West Coast Rock Lobster recreational sector cannot be allocated as yet."           
+            text_size: self.size
+            halign: 'center'
+            valign: 'center'
+            #font_size: '10sp'
+            #size_hint_y: None
+            #text_size: self.width, None
+            #height: self.texture_size[1]
+        Button:
+            id: cancel
+            text: "Close"
+            #font_size: '10sp'
+            size_hint: (1, None)
+            text_size: self.size  
+            halign: 'center'
+            valign: 'center'
+            #size_hint: 0.8, 0.2
+            pos_hint: {'left':1, 'top':1}
+            on_press: root.dismiss()        
+        
+        
+<MainWindow>:
+    name: "main"
+    
+    ScrollView:
+        bar_width: 20       
+        bar_color: 5, 10, 15, .8
+        bar_inactive_color: 5, 20, 10, .5
+        scroll_type: ['bars', 'content']
+    
+        BoxLayout:
+            orientation: 'vertical'
+            #size_hint: (1, 1)  #THIS adjusted the height to get the scrollbar to work!!
+                
+            
+            Label: 
+                text:"Crayfishing in South Africa"
+                font_name: 'BattelLines'
+                font_size: '30sp'
+                #text_size: self.size
+                halign: 'center'
+                valign: 'top'
+                size_hint: (1, None)    #Label is the size of the text
+                size: self.texture_size  #Label is the size of the text
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: (1, 0.4)  #width, height. Changing the height of the box changes the size of the images
+                spacing: 1
+                padding: 1
+
+                Image:
+                    size_hint_x: 1
+                    source: 'fims lobster close3 r.jpg'                
+                    allow_stretch: True
+
+                Image:
+                    size_hint_x: 1
+                    source: 'fims crayfish boats dec2010 -12 r.jpg'
+                    allow_stretch: True
+
+            Widget:
+                id: separator2
+                size_hint_y: None
+                height: 6
+                canvas:
+                    Color: 
+                        rgba: 0.9, 0.9, 0.9, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: separator2.width, 2
+
+
+            
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: (1, 1)  #THIS adjusted the height to get the scrollbar to work!!
+
+
+                ScrollView:
+                    bar_width: 20       
+                    bar_color: 5, 10, 15, .8
+                    bar_inactive_color: 5, 20, 10, .5
+                    scroll_type: ['bars', 'content']
+                
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: 10 #Creates space on sides of text box
+                        size_hint_y: None
+                        #height: 800
+                        size_hint: (1, 1.8)
+
+                        Label:
+                            text: 'West Coast rock lobster (Jasus lalandii) is found in abundance for commercial exploitation along the west coast of South Africa, as far as Gansbaai. Commercial exploitation of the resource started in the late nineteenth century, yet records of early recreational activity are scant. Historical records do show that the collection of rock lobster has been an important subsistence and/or recreational activity for communities along the west and south-west coasts of South Africa. Before 1983, recreational fishers could fish without a permit, the bag limit was 5 lobsters per day and the minimum size limit was 89mm carapace length (CL). A recreational fishing season was introduced in 1986 from 15 November to 16 April. The total allowable catch (TAC) for the entire sector dropped from what was >6000 tons in the 1970s to ~2500 tons from the mid-1990s, due to a significant drop in somatic growth rate that occurred at the end of the 1980s. The TAC has continued to decline and has remained below 2000 tons since 2014. The allocation to the recreational sector is a total applied effort (TAE) of fishing days with identified dates within the season that fishers may harvest on. In recent years, the number of fishing days allocated to the recreational sector was 21 fishing days and has declined to a meagre 12 fishing days.'
+                            color: 0.1, 0.1, 0.1, 1 
+
+                            size_hint_y: None
+                            color: 0.1, 0.1, 0.1, 1 
+                            text_size: self.width, None
+                            height: self.texture_size[1]
+
+                            #text_size: self.size
+                            valign: 'center'
+                            halign: 'center'
+                            font_name: 'MarkingPenRegular'
+                            canvas.before:  
+                                Color:
+                                    rgba: 0.9, 0.9, 0.9, 1
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    #source: "fims lobster close3.jpg"     
+
+
+
+                Button:
+                    background_color: rgba("#FF0000")    #Red 
+                    font_name: 'MarkingPenRegular'
+                    text: "Submit your catches"
+                    #font_size: self.height/3
+                    size_hint: (1, None)
+                    height: self.texture_size[1]
+                    text_size: self.size     
+                    halign: 'center'
+                    valign: 'center'
+                    padding_y: 10
+                    on_press:                    
+                        app.root.current = "seventh" 
+                        root.manager.transition.direction = "left"
+
+                Button:
+                    background_color: rgba("#FF0000")    #Red 
+                    font_name: 'MarkingPenRegular'
+                    text: "Media releases"
+                    #font_size: self.height/3
+                    size_hint: (1, None)
+                    height: self.texture_size[1]
+                    text_size: self.size     
+                    halign: 'center'
+                    valign: 'center'
+                    padding_y: 10
+                    on_press:                    
+                        app.root.current = "eighth" 
+                        root.manager.transition.direction = "left"
+
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: (1, 0.4)  #width, height. Changing the height of the box changes the size of the images
+                spacing: 1
+                padding: 1
+
+                Image:
+                    size_hint_x: 1
+                    source: 'fims lobster close1v3prn r.jpg'
+                    allow_stretch: True
+
+                Image:
+                    size_hint_x: 1
+                    source: 'fims trapset4 r.jpg'
+                    allow_stretch: True
+
+            Widget:
+                id: separator1
+                size_hint_y: None
+                height: 6
+                canvas:
+                    Color: 
+                        rgba: 0.9, 0.9, 0.9, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: separator1.width, 2
+
+            
+            BoxLayout:
+                size_hint: (1, 1)  #Value 0 to 1, width, height
+                spacing: 1
+                padding: 1
+                size_hint_y: None
+                height: 150
+
+
+                Button:
+                    background_color:  0,0,0,0
+                    text: "Season dates"
+                    font_name: 'MarkingPenRegular'
+                    #font_size: self.height/7
+                    text_size: self.size     
+                    halign: 'center'
+                    valign: 'bottom'
+                    padding_y: 10
+                    on_press:                    
+                        app.root.current = "second" 
+                        root.manager.transition.direction = "left"
+
+                    Image:
+                        source: 'Lobster1.png'
+                        size_hint_y: None
+                        size_hint_x: None 
+                        width: 100
+                        height: 60
+                        allow_stretch: True
+                        keep_ratio: True
+                        #pos:((self.width)/2.4,(self.top)/2.5)
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y +10      
+
+
+                Button:
+                    background_color: 0,0,0,0
+                    text: "Permits"
+                    font_name: 'MarkingPenRegular'
+                    #font_size: self.height/7
+                    text_size: self.size     
+                    halign: 'center'
+                    valign: 'bottom'
+                    padding_y: 10
+                    on_release:
+                        app.root.current = "third" 
+                        root.manager.transition.direction = "left"
+
+                    Image:
+                        source: 'Permits.png'
+                        size_hint_y: None
+                        size_hint_x: None 
+                        width: 70
+                        height: 120
+                        allow_stretch: True
+                        keep_ratio: True
+                        #pos:((self.width)/2.4,(self.top)/2.5)
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y +10          
+
+
+                Button:
+                    background_color: 0,0,0,0
+                    text: "Regulations"  #Include closed areas
+                    font_name: 'MarkingPenRegular'
+                    #font_size: self.height/7
+                    text_size: self.size     
+                    halign: 'center'
+                    valign: 'bottom'
+                    padding_y: 10
+                    on_release:
+                        app.root.current = "fourth" 
+                        root.manager.transition.direction = "left"
+
+                    Image:
+                        source: 'Regulations.png'
+                        size_hint_y: None
+                        size_hint_x: None 
+                        width: 70
+                        height: 120
+                        allow_stretch: True
+                        keep_ratio: True
+                        #pos:((self.width)/2.4,(self.top)/2.5)
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y +10  
+
+
+                Button:
+                    background_color: 0,0,0,0
+                    text: "Measuring"
+                    font_name: 'MarkingPenRegular'
+                    #font_size: self.height/7
+                    text_size: self.size     
+                    halign: 'center'
+                    valign: 'bottom'
+                    padding_y: 10
+                    on_release:
+                        app.root.current = "fifth" 
+                        root.manager.transition.direction = "left"
+
+                    Image:
+                        source: 'Measuring.png'
+                        size_hint_y: None
+                        size_hint_x: None 
+                        width: 70
+                        height: 120
+                        allow_stretch: True
+                        keep_ratio: True
+                        #pos:((self.width)/2.4,(self.top)/2.5)
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y +10  
+
+
+                Button:
+                    background_color: 0,0,0,0
+                    text: "Gear"
+                    font_name: 'MarkingPenRegular'
+                    #font_size: self.height/7
+                    text_size: self.size     
+                    halign: 'center'
+                    valign: 'bottom'
+                    padding_y: 10
+                    on_release:
+                        app.root.current = "sixth" 
+                        root.manager.transition.direction = "left"
+
+                    Image:
+                        source: 'Gear.png'
+                        size_hint_y: None
+                        size_hint_x: None 
+                        width: 70
+                        height: 120
+                        allow_stretch: True
+                        keep_ratio: True
+                        #pos:((self.width)/2.4,(self.top)/2.5)
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y +10      
+        
+
+<SecondWindow>:
+    name: "second"
+    
+    BoxLayout:
+        orientation: 'vertical'
+        
+        BoxLayout:
+            size_hint: (1, 0.2)
+        
+            Button:
+                background_color: 0,0,0,0                
+                on_release:
+                    app.root.current = "main" 
+                    root.manager.transition.direction = "right"
+
+                Image:
+                    source: 'arrow.png'                    
+                    pos_hint: {'left':1, 'top':1}
+                    #pos:((self.width)/2.4,(self.top)/2.5)
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y +10 
+        
+        
+        Label: 
+            text: '2019-2020 fishing dates'
+            color: 0.5, 0.5, 1, 1           
+            font_name: 'MarkingPenRegular'
+            font_size: 40
+            text_size: self.size
+            halign: 'center'
+            valign: 'top'
+            size_hint: (1, None)    #Label is the size of the text
+            size: self.texture_size  #Label is the size of the text
+               
+        Label:
+            text: "The Total Allowable Catch (TAC) for West Coast rock lobster (WCRL) is determined annually by the delegated authority, the Deputy Diretor General: Fisheries Management. The TAC is a global tonnage that is split between the commercial (offshore and nearshore), small-scale/interim relief and the recreational sectors. The recreational sector receives 4% of the global TAC which is managed through Total Applied Effort (TAE), granted as fishing days. Telephone surveys have been conducted to sample the number of fishers who utilise their permits. Estimating the number of fishers actively fishing at a maximum of 4 lobsters per day, the number of fishing days that will reach the TAC is calculated. The dates fall on weekends and close to public holidays and are chosen to accommodate the local fishers and holiday makers. The dates chosen coincide, where possible, as close to morning low tide as fishers prefer the low tide for optimal fishing and to easily reach the lobster that are further out."
+            
+            size_hint_y: None
+            color: 0.1, 0.1, 0.1, 1 
+            #font_size: '20sp'
+            text_size: self.width, None
+            height: self.texture_size[1]
+            canvas.before:
+                Color:
+                    rgba: 0.9, 0.9, 0.9, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        
+        
+        GridLayout:
+            cols: 4
+            rows: 1
+            row_force_default:True
+            row_default_height:80
+            spacing: 5
+            padding: [5,5]
+            size_hint_y: None  #Compacts the space
+            height: self.minimum_height  #Compacts the space
+            Button:
+                background_color: 0.5, 0.5, 1, 1    
+                font_name: 'MarkingPenRegular'
+                text: "Nr"
+                #font_size: self.height/3
+            
+            Button:
+                background_color: 0.5, 0.5, 1, 1    
+                font_name: 'MarkingPenRegular'
+                text: "Date"
+                #font_size: self.height/3
+            Button:
+                background_color: 0.5, 0.5, 1, 1
+                font_name: 'MarkingPenRegular'
+                text: "Day"
+                #font_size: self.height/3
+            Button:
+                background_color: 0.5, 0.5, 1, 1    
+                font_name: 'MarkingPenRegular'
+                text: "Approx. Low tide"
+                #font_size: self.height/4
+
+        Widget:
+            id: separator
+            size_hint_y: None
+            height: 6
+            canvas:
+                Color: 
+                    rgba: 0.9, 0.9, 0.9, 1
+                Rectangle:
+                    pos: self.pos
+                    size: separator.width, 2
+
+        ScrollView:
+            #Don't set the height of the scrollview here, rather change the height of the Boxlayout
+            #Scrollview can only have one wigdet/child
+            # setting the width of the scrollbar to 50pixels
+            bar_width: 20
+            # setting the color of the active bar using rgba
+            bar_color: 5, 10, 15, .8
+            # setting the color of the inactive bar using rgba
+            bar_inactive_color: 5, 20, 10, .5
+            # setting the content only to scroll via bar, not content
+            scroll_type: ['bars', 'content']
+        
+            GridLayout:
+                cols: 4
+                #rows: 12
+                size_hint_y:None
+                size_hint: (1, 1.58)  #THIS adjusted the height to get the scrollbar to work!!
+                row_force_default:True
+                row_default_height:80
+                spacing: 5
+                padding: [5,5]                  
+
+                Button:
+                    text: "1"
+                Button:
+                    text: "30 Nov 2019"
+                Button:
+                    text: "Saturday"
+                Button:
+                    text: "11:30am"
+                Button:
+                    text: "2"
+                Button:
+                    text: "1 Dec 2019"
+                Button:
+                    text: "Sunday"
+                Button:
+                    text: "12:15pm"
+                Button:
+                    text: "3"
+                Button:
+                    text: "14 Dec 2019"
+                Button:
+                    text: "Saturday"
+                Button:
+                    text: "10:29am"
+                Button:
+                    text: "4"
+                Button:
+                    text: "15 Dec 2019"
+                Button:
+                    text: "Sunday"
+                Button:
+                    text: "11:14am"
+                Button:
+                    text: "5"
+                Button:
+                    text: "21 Dec 2019"
+                Button:
+                    text: "Saturday"
+                Button:
+                    text: "05:15am"
+                Button:
+                    text: "6"
+                Button:
+                    text: "22 Dec 2019"
+                Button:
+                    text: "Sunday"
+                Button:
+                    text: "06:19am"
+                Button:
+                    text: "7"
+                Button:
+                    text: "26 Dec 2019"
+                Button:
+                    text: "Thursday"
+                Button:
+                    text: "09:24am"
+                Button:
+                    text: "8"
+                Button:
+                    text: "1 Jan 2020"
+                Button:
+                    text: "Wednesday"
+                Button:
+                    text: "01:26pm"
+                Button:
+                    text: "9"
+                Button:
+                    text: "4 Jan 2020"
+                Button:
+                    text: "Saturday"
+                Button:
+                    text: "03:35am"
+                Button:
+                    text: "10"
+                Button:
+                    text: "5 Jan 2020"
+                Button:
+                    text: "Sunday"
+                Button:
+                    text: "04:51am"
+                Button:
+                    text: "11"
+                Button:
+                    text: "20 Jun 2020"
+                Button:
+                    text: "Saturday"
+                Button:
+                    text: "08:48am"
+                Button:
+                    text: "12"
+                Button:
+                    text: "21 June 2020"
+                Button:
+                    text: "Sunday"
+                Button:
+                    text: "09:23am"
+        #Label:
+        #    text: "Requests for dates for the 2020/2021 season can be emailed to .name. .surname. ....@daff.gov.za."
+        #    size_hint_y: None
+        #    text_size: self.width, None
+        #    height: self.texture_size[1]
+                            
+<ThirdWindow>:
+    name: "third"
+    
+    BoxLayout:
+        orientation: 'vertical'
+        
+        BoxLayout:
+            size_hint: (1, 0.2)
+        
+            Button:
+                background_color: 0,0,0,0                
+                on_release:
+                    app.root.current = "main" 
+                    root.manager.transition.direction = "right"
+
+                Image:
+                    source: 'arrow.png'                    
+                    pos_hint: {'left':1, 'top':1}
+                    #pos:((self.width)/2.4,(self.top)/2.5)
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y +10 
+        
+        Label: 
+            text: 'Purchasing a permit'
+            color: 0.5, 0.5, 1, 1           
+            font_name: 'MarkingPenRegular'
+            font_size: '30sp'
+            text_size: self.size
+            halign: 'center'
+            valign: 'top'
+            size_hint: (1, None)    #Label is the size of the text
+            size: self.texture_size  #Label is the size of the text
+            
+            
+        Label:
+            text: "Recreational permits can only be purchased at the Post Office. An annual permit to harvest West Coast Rock Lobster costs R94. Contact your local post office prior to arriving to ensure that they have permits available. Record your catches on the flip side of the permit."
+            size_hint_y: None
+            #font_size: '20sp'
+            text_size: self.width, None
+            height: self.texture_size[1]
+            color: 0.1, 0.1, 0.1, 1 
+            canvas.before:
+                Color:
+                    rgba: 0.9, 0.9, 0.9, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        
+        
+        ScrollView:
+            #Don't set the height of the scrollview here, rather change the height of the Boxlayout
+            #Scrollview can only have one wigdet/child
+            # setting the width of the scrollbar to 50pixels
+            bar_width: 20
+            # setting the color of the active bar using rgba
+            bar_color: 5, 10, 15, .8
+            # setting the color of the inactive bar using rgba
+            bar_inactive_color: 5, 20, 10, .5
+            # setting the content only to scroll via bar, not content
+            scroll_type: ['bars', 'content']
+        
+            BoxLayout:
+                size_hint: (1, 2)
+                orientation: 'vertical'
+                padding: 5
+                spacing: 5
+
+                Image:
+                    source: 'RecrPermit_Page_1.png'
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y +10 
+            
+                Image:
+                    source: 'RecrPermit_Page_3.png'
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y +10 
+            
+
+#<CustomPopup>:
+#    size_hint: .5 , .5
+#    auto_dismiss: False
+#    title: "The Popup"
+#    Button:
+#        text: "Close"
+#        on_press: root.dismiss()
+
+            
+<FourthWindow>:
+    name: "fourth"      
+    
+    ScrollView:
+        
+        #Don't set the height of the scrollview here, rather change the height of the Boxlayout
+        #Scrollview can only have one wigdet/child
+        # setting the width of the scrollbar to 50pixels
+        bar_width: 20
+        # setting the color of the active bar using rgba
+        bar_color: 5, 10, 15, .8
+        # setting the color of the inactive bar using rgba
+        bar_inactive_color: 5, 20, 10, .5
+        # setting the content only to scroll via bar, not content
+        scroll_type: ['bars', 'content']
+    
+        BoxLayout:
+            orientation: 'vertical'    
+            size_hint: (1, 6)  #THIS adjusted the height to get the scrollbar to work!!
+
+
+            BoxLayout:
+                size_hint: (1, 0.06)
+
+                Button:
+                    background_color: 0, 0, 0 ,0               
+                    on_release:
+                        app.root.current = "main" 
+                        root.manager.transition.direction = "right"
+
+                    Image:
+                        source: 'arrow.png'                    
+                        pos_hint: {'left':1, 'top':1}
+                        #pos:((self.width)/2.4,(self.top)/2.5)
+                        center_x: self.parent.center_x 
+                        center_y: self.parent.center_y +10 
+
+
+            Label: 
+                text: 'Regulations'
+                color: 0.5, 0.5, 1, 1           
+                font_name: 'MarkingPenRegular'
+                font_size: '30sp'
+                text_size: self.size
+                halign: 'center'
+                valign: 'top'
+                size_hint: (1, None)    #Label is the size of the text
+                size: self.texture_size  #Label is the size of the text    
+
+
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 10 #Creates space on sides of text box
+                spacing: 10
+                    
+
+                Label:
+                    text: 
+                        "A summary of Regulation 51, issued under the Marine Living Resources Act 18 of 1998 (MLRA), that addresses recreational West Coast Rock lobster (WCRL) fishing is as follows: \n\nOnly persons over the age of 12 may obtain a permit for fishing,  \n\nThe minimum size of a WCRL is 80 mm  carapace length, \n\nFishing for WCRL is only permitted on the dates listed in the schedule, \n\nThe permit holder may not be in possession of more than four WCRL per day, \n\nA person may only purchase one permit for themselves,\n\nThe permit holder may only engage in fishing or collecting of WCRL between the hours of 8h00 and 16h00, \n\nThe maximum amount of WCRL caught per day (i.e. four) may be transported per day, to the maximum amount of 20 WCRL, in a vehicle and all the persons by whom the WCRL were caught must be in the vehicle, \n\nThe WCRL must be transported in a whole state" 
+
+                    size_hint_y: None                
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                    color: 0.1, 0.1, 0.1, 1 
+                    canvas.before:  
+                        Color:
+                            rgba: 0.9, 0.9, 0.9, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Label: 
+                    text: 'To report suspicious fishing activities contact the Department of Environment Forestry and Fisheries Environmental Crimes number 0800 205 005, the nearest police station, phone the CrimeStop line on 08600-10111 or the police emergency number on 10111. '
+                    size_hint_y: None                
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                    color: 0.1, 0.1, 0.1, 1                     
+                    canvas.before:  
+                        Color:
+                            rgba: rgba("#FCEE40")
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size    
+                
+                Label: 
+                    text: 'Closed areas'
+                    color: 0.5, 0.5, 1, 1           
+                    font_name: 'MarkingPenRegular'
+                    font_size: '30sp'
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'top'
+                    size_hint: (1, None)    #Label is the size of the text
+                    size: self.texture_size  #Label is the size of the text    
+
+
+                Label:
+                    text: 
+                        "Certain areas are prohibited to WCRL fishing, because they are either \n  1) Marine Protected Areas (MPAs), \n  2) Closed areas, or \n  3) National Parks \n \n  Maps of these areas:" 
+
+                    size_hint_y: None                
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                    color: 0.1, 0.1, 0.1, 1 
+                    canvas.before:  
+                        Color:
+                            rgba: 0.9, 0.9, 0.9, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+
+                BoxLayout:
+                    size_hint: (1, 4)
+                    orientation: 'vertical'
+                    padding: 5
+                    spacing: 5
+
+                    Image:
+                        source: '1_2_3.jpg'
+                        center_x: self.parent.center_x 
+                        center_y: self.parent.center_y +10 
+                        #size_hint_y: None                   
+                        #width: 100
+                    
+                    Image:
+                        source: '4-17.jpg'
+                        center_x: self.parent.center_x 
+                        center_y: self.parent.center_y +10 
+            
+#:import rgba kivy.utils.get_color_from_hex
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+#Placing the transition here means it'll only apply to this button
+
+                GridLayout:
+                    cols: 1
+                    #rows: 3
+                    size_hint_y:None
+                    size_hint: (1, 2)  #THIS adjusted the height to get the scrollbar to work!!
+                    row_force_default:True
+                    row_default_height:80            
+                    height: self.minimum_height  #Compacts the space
+                    spacing: 5
+                    padding: [5,5]
+
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition                        
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "1. Namaqua National Park MPA"
+                        #font_size: self.height/2
+                        #size_hint: (1, None)
+                        #text_size: self.size     
+                        #halign: 'center'
+                        #valign: 'center'
+                        on_press:
+                            app.root.transition = FadeTransition()
+                        on_release:
+                            app.root.current = "namaqua" 
+                            app.root.transition = FadeTransition()
+                                                       
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "2. Stompneus and Shelly closed areas"
+                        #font_size: self.height/2
+                        #size_hint: (1, None)
+                        #text_size: self.size     
+                        #halign: 'center'  
+                        #valign: 'center'
+                        on_press:
+                            app.root.transition = FadeTransition()
+                        on_release:
+                            app.root.current = "stompneusshelly" 
+                            app.root.transition = FadeTransition() 
+                            
+
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "3. Saldanha and West Coast National Park"
+                        #font_size: self.height/2
+                        #size_hint: (1, None)
+                        #text_size: self.size     
+                        #halign: 'center' 
+                        #valign: 'center'
+                        on_press:
+                            app.root.transition = FadeTransition()
+                        on_release:
+                            app.root.current = "westcoast" 
+                            app.root.transition = FadeTransition()
+                
+
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition                        
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "4. Chapmans to Melkbos"
+                        
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "5. Robben Island MPA"
+                            
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "6. Karbonkelberg MPA"
+                            
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "7. Cape of Good Hope MPA"
+                            
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "8. Paulsberg MPA"
+                            
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "9. Castle Rock MPA"
+                            
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "10. Boulders MPA"
+                            
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "11. St. James MPA"
+                            
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "12. Helderberg MPA"
+                            
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "13. Strand Closed Area"
+                            
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "14. Betty's Bay MPA"
+                            
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "15. Onrus Closed Area"
+                            
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "16. Hermanus Closed Area"
+                            
+                    Button:
+                        background_color: rgba("#FF0000")    #Red 
+                        font_name: 'MarkingPenRegular'
+                        text: "17. Walker Bay Whale Sanctuary MPA"
+                            
+<FifthWindow>:
+    name: "fifth"
+    
+    BoxLayout:
+        orientation: 'vertical'
+        
+        BoxLayout:
+            size_hint: (1, 0.2)
+        
+            Button:
+                background_color: 0,0,0,0                
+                on_release:
+                    app.root.current = "main" 
+                    root.manager.transition.direction = "right"
+
+                Image:
+                    source: 'arrow.png'                    
+                    pos_hint: {'left':1, 'top':1}
+                    #pos:((self.width)/2.4,(self.top)/2.5)
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y +10 
+        
+        
+        Label: 
+            text: 'Measuring crayfish'
+            color: 0.5, 0.5, 1, 1           
+            font_name: 'MarkingPenRegular'
+            font_size: '30sp'
+            text_size: self.size
+            halign: 'center'
+            valign: 'top'
+            size_hint: (1, None)    #Label is the size of the text
+            size: self.texture_size  #Label is the size of the text
+               
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10 #Creates space on sides of text box
+        
+            Label:
+                text: "The carapce length is measured from the tip of the rostrum along a straight mid-dorsal line to the posterior edge of the carapace. "
+                size_hint_y: None
+                #font_size: '20sp'
+                text_size: self.width, None
+                height: self.texture_size[1]
+                color: 0.1, 0.1, 0.1, 1 
+                canvas.before:  
+                    Color:
+                        rgba: 0.9, 0.9, 0.9, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                            
+            BoxLayout:
+                size_hint: (1, 4)
+                orientation: 'horizontal'
+                padding: 5
+                spacing: 5
+
+                Image:
+                    source: 'MeasureLobster.png'
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y +10 
+                    #size_hint_y: None                   
+                    #width: 100  
+                    
+<SixthWindow>:
+    name: "sixth"
+    
+    BoxLayout:
+        orientation: 'vertical'
+        
+        BoxLayout:
+            size_hint: (1, 0.2)
+        
+            Button:
+                background_color: 0,0,0,0                
+                on_release:
+                    app.root.current = "main" 
+                    root.manager.transition.direction = "right"
+
+                Image:
+                    source: 'arrow.png'                    
+                    pos_hint: {'left':1, 'top':1}
+                    #pos:((self.width)/2.4,(self.top)/2.5)
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y +10 
+        
+        
+        Label: 
+            text: 'Gear for recreational fishing'
+            color: 0.5, 0.5, 1, 1           
+            font_name: 'MarkingPenRegular'
+            font_size: '30sp'
+            text_size: self.size
+            halign: 'center'
+            valign: 'top'
+            size_hint: (1, None)    #Label is the size of the text
+            size: self.texture_size  #Label is the size of the text
+               
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 20 #Creates space on sides of text box
+        
+            Label:
+                text: "Recreational crayfishers may collect WCRL by: \n\nDiving from the sea-shore without the use of any artificial breathing apparatus other than a snorkel, \n\nUsing a ring net with a mesh size more than 90mm stretched (measuring from inside of knot/joint to inside of knot/joint) and a cod-end longer than 1200mm,from the sea shore or from a vessel not used for commercial purposes.  "
+                size_hint_y: None
+                text_size: self.width, None
+                height: self.texture_size[1]
+                color: 0.1, 0.1, 0.1, 1 
+                canvas.before:  
+                    Color:
+                        rgba: 0.9, 0.9, 0.9, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            
+            BoxLayout:
+                canvas.before:  
+                    Color:
+                        rgba: 0.8, 0.8, 0.8, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                
+                Image:
+                    source: 'AllGear.png'
+                    #size_hint_y: None
+                    #size_hint_x: None 
+                    #width: 80
+                    #height: 40
+                    allow_stretch: True
+                    keep_ratio: True
+                    #pos:((self.width)/2.4,(self.top)/2.5)
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+            
+            
+<SeventhWindow>:
+    name: "seventh"
+    permitnr: permitnr
+    nrlobster: nrlobster
+    fmonth: fmonth
+    fyear: fyear
+    area: area 
+
+    ScrollView:
+        
+        #Don't set the height of the scrollview here, rather change the height of the Boxlayout
+        #Scrollview can only have one wigdet/child
+        # setting the width of the scrollbar to 50pixels
+        bar_width: 20
+        # setting the color of the active bar using rgba
+        bar_color: 5, 10, 15, .8
+        # setting the color of the inactive bar using rgba
+        bar_inactive_color: 5, 20, 10, .5
+        # setting the content only to scroll via bar, not content
+        scroll_type: ['bars', 'content']
+    
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (1, 1.5) #THIS adjusted the height to get the scrollbar to work!!
+
+            BoxLayout:
+                size_hint: (1, 0.2)
+                #padding: 20
+
+                Button:
+                    background_color: 0,0,0,0                
+                    on_release:
+                        app.root.current = "main" 
+                        root.manager.transition.direction = "right"
+
+                    Image:
+                        source: 'arrow.png'                    
+                        pos_hint: {'left':1, 'top':1}
+                        #pos:((self.width)/2.4,(self.top)/2.5)
+                        center_x: self.parent.center_x 
+                        center_y: self.parent.center_y                        
+
+            Label: 
+                padding_y: 2
+                text: 'Submit your catches'
+                color: 0.5, 0.5, 1, 1           
+                font_name: 'MarkingPenRegular'
+                font_size: '30sp'
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                size_hint_y: None    #Label is the size of the text  
+                text_size: self.width, None   #Label is the size of the text  
+                height: self.texture_size[1]  #Label is the size of the text  
+                #size_hint: (1, None)    #Label is the size of the text
+                #size: self.texture_size  #Label is the size of the text  
+                
+            #BoxLayout:
+                #orientation: 'vertical'
+                #padding: 20 #Creates space on sides of text box
+
+            Label:
+                text: "Help scientists determine how much crayfish the recreational sector has caught in each area by submitting your catches here "
+                size_hint_y: None
+                text_size: self.width, None
+                height: self.texture_size[1]
+                color: 0.1, 0.1, 0.1, 1 
+                canvas.before:  
+                    Color:
+                        rgba: 0.9, 0.9, 0.9, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            GridLayout:
+                cols: 2
+                rows: 4
+                #row_force_default: True
+
+                Label:
+                    text: "Permit number:"
+                    size: self.texture_size
+
+                TextInput:
+                    id: permitnr
+                    multiline:False
+                    hint_text: "e.g. 123456 (6 digits)"
+                    on_text_validate: root.register(); self.text = ""
+                    
+
+                Label:
+                    text: "Number of lobster kept:"
+                    size: self.texture_size
+
+                TextInput:
+                    id: nrlobster
+                    multiline:False
+                    on_text_validate: root.register(); self.text = ""
+                
+                
+                GridLayout:
+                    cols: 2
+                    rows: 1
+
+                    Label:
+                        text: "Month:"
+                        size: self.texture_size
+
+                    Spinner: 
+                        id: fmonth
+                        text: "Choose month"
+                        values: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+                GridLayout:
+                    cols: 2
+                    rows: 1 
+                    
+                    Label:
+                        text: "Year:"
+                        size: self.texture_size
+
+                    Spinner: 
+                        id: fyear
+                        text: "Choose year"
+                        values: ["2019", "2020"]
+                #DatePicker:
+                #    pHint: 1,1
+                #    size_hint_x: .4
+                #    id: fdate
+                
+                Label:
+
+                    text: "Fishing area:"
+                    size: self.texture_size
+
+                Spinner: 
+                    # Assigning id  
+                    id: area
+
+                    # Callback  
+                    #on_text: root.spinner_clicked(spinner_id.text) 
+
+                    # initially text on spinner 
+                    text: "Choose area"
+
+                    # total values on spinner 
+                    values: ["A", "B", "C", "D", "E", "F"]
+
+                    # declaring size of the spinner and the position of it
+                    #size_hint: None, None
+                    #size: 200, 50
+                    #pos_hint:{'center_x':.5, 'top': 1}             
+                
+            
+            Button:
+                background_color: rgba("#FF0000")
+                text:"Submit"
+                on_press: 
+                    self.background_color = rgba("#8AE728") #Doesn't work
+                    root.register()
+                on_release: 
+                    self.background_color = rgba("#FF0000") #works
+                    root.clear_inputs([permitnr, nrlobster, fmonth, fyear, area]) #Clears the fields after entering     
+                  
+            
+            Button:
+                background_color: rgba("#FF0000")
+                text:"See all catches submitted"
+                on_release:
+                    app.root.current = "ninth" 
+                    root.manager.transition.direction = "left"  
+
+            BoxLayout:                
+                size_hint: (1, 4)
+                orientation: 'horizontal'
+                padding: 5
+                spacing: 5
+
+                Image:
+                    source: 'Crayfish areas.jpg'
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y +10 
+                    #size_hint_y: None                   
+                    #width: 100 
+
+<EighthWindow>:
+    name: "eighth"
+    
+    BoxLayout:
+        orientation: 'vertical'
+        
+        BoxLayout:
+            size_hint: (1, 0.2)
+        
+            Button:
+                background_color: 0,0,0,0                
+                on_release:
+                    app.root.current = "main" 
+                    root.manager.transition.direction = "right"
+
+                Image:
+                    source: 'arrow.png'                    
+                    pos_hint: {'left':1, 'top':1}
+                    #pos:((self.width)/2.4,(self.top)/2.5)
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y +10 
+        
+        
+        Label: 
+            text: 'Media releases'
+            color: 0.5, 0.5, 1, 1           
+            font_name: 'MarkingPenRegular'
+            font_size: '30sp'
+            text_size: self.size
+            halign: 'center'
+            valign: 'top'
+            size_hint: (1, None)    #Label is the size of the text
+            size: self.texture_size  #Label is the size of the text
+        
+                    
+        GridLayout:
+            cols: 1
+            #rows: 3
+            size_hint_y:None
+            size_hint: (1, 1.58)  #THIS adjusted the height to get the scrollbar to work!!
+            row_force_default:True
+            row_default_height:80
+            #col_force_default:True
+            #col_default_width:400
+            spacing: 5
+            padding: [150,5]   
+
+            Button:     
+                text: 'Download: DEFF announces 2019-2020 global WCRL TAC'
+                underline: True
+                font_size: 18
+                text_size: self.size     
+                halign: 'center'
+                valign: 'center'
+                background_color: rgba("#AAC2FC") #works
+                on_press: 
+                    self.background_color = rgba("#AAC2FC") #Doesn't work                   
+                on_release: 
+                    self.background_color = rgba("#AAC2FC") #works
+                    
+
+
+            Button:     
+                text: 'Download: Postponement of 10 & 11 April 2020'           
+                underline: True
+                font_size: 18
+                text_size: self.size     
+                halign: 'center'
+                valign: 'center'
+                background_color: rgba("#AAC2FC") #works
+                on_press: 
+                    self.background_color = rgba("#AAC2FC") #Doesn't work                   
+                on_release: 
+                    self.background_color = rgba("#AAC2FC") #works
+
+            Button:     
+                text: 'Download: DEFF grants 20 & 21 June 2020'          
+                underline: True
+                font_size: 18
+                text_size: self.size     
+                halign: 'center'
+                valign: 'center'
+                background_color: rgba("#AAC2FC") #works
+                on_press: 
+                    self.background_color = rgba("#AAC2FC") #Doesn't work                   
+                on_release: 
+                    self.background_color = rgba("#AAC2FC") #works
+
+<NinthWindow>:
+    name: 'ninth'
+    bar: bar
+    
+    BoxLayout:
+        orientation: 'vertical'
+                
+        BoxLayout:
+            size_hint: (1, 0.4)
+            #height: 6
+                
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition        
+            Button:
+                background_color: 0,0,0,0 
+                #on_press: root.on_enter()
+                on_press: root.Update()
+                on_release:                    
+                    #root.on_enter()
+                    app.root.current = "seventh" 
+                    app.root.transition = FadeTransition()
+                 
+                Image:
+                    source: 'cross.png'  
+                    size_hint_y: None
+                    width: 50
+                    allow_stretch: True
+                    pos_hint: {'left':1, 'top':1}
+                    #pos:((self.width)/2.4,(self.top)/2.5)
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y
+    
+    BoxLayout:
+        orientation: 'vertical'      
+        id: bar
+        size_hint: 0.8, 0.75
+        pos_hint: {"x":0.1, "y":0.1}
+
+            
+<Namaqua>:
+    name: "namaqua"
+    
+    BoxLayout:
+        orientation: 'vertical'
+                
+        BoxLayout:
+            size_hint: (1, 0.4)
+            #height: 6
+                
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition        
+            Button:
+                background_color: 0,0,0,0                
+                on_release:
+                    app.root.current = "fourth" 
+                    app.root.transition = FadeTransition()
+                 
+                Image:
+                    source: 'cross.png'  
+                    size_hint_y: None
+                    width: 50
+                    allow_stretch: True
+                    pos_hint: {'left':1, 'top':1}
+                    #pos:((self.width)/2.4,(self.top)/2.5)
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y 
+        
+        
+        Label: 
+            text: 'Namaqua National Park MPA'
+            color: 0.5, 0.5, 1, 1           
+            font_name: 'MarkingPenRegular'
+            font_size: '30sp'
+            text_size: self.size
+            halign: 'center'
+            valign: 'top'
+            size_hint: (1, None)    #Label is the size of the text
+            size: self.texture_size  #Label is the size of the text
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10 #Creates space on sides of text box
+        
+            Label:
+                text: 
+                    "A person in possession of a recreational fishing permit may only fish for west coast rock lobster in the Controlled Zones. No person may fish, or attempt to fish, in a Restricted Zone of the Marine Protected Area." 
+
+                size_hint_y: None                
+                text_size: self.width, None
+                height: self.texture_size[1]
+                color: 0.1, 0.1, 0.1, 1 
+                canvas.before:  
+                    Color:
+                        rgba: 0.9, 0.9, 0.9, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+        
+        BoxLayout:
+            size_hint: (1, 4)
+            orientation: 'horizontal'
+            padding: 5
+            spacing: 5
+
+            Image:
+                source: 'namaqua.jpg'
+                center_x: self.parent.center_x 
+                center_y: self.parent.center_y +10 
+                #size_hint_y: None                   
+                #width: 100   
+
+<StompneusShelly>:
+    name: "stompneusshelly"
+    
+    BoxLayout:
+        orientation: 'vertical'
+                
+        BoxLayout:
+            size_hint: (1, 0.4)
+            #height: 6
+                
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition        
+            Button:
+                background_color: 0,0,0,0                
+                on_release:
+                    app.root.current = "fourth" 
+                    app.root.transition = FadeTransition()
+                 
+                Image:
+                    source: 'cross.png'  
+                    size_hint_y: None
+                    width: 50
+                    allow_stretch: True
+                    pos_hint: {'left':1, 'top':1}
+                    #pos:((self.width)/2.4,(self.top)/2.5)
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y 
+        
+        
+        Label: 
+            text: 'Stompneus Point and Shelly Point Closed Areas'
+            color: 0.5, 0.5, 1, 1           
+            font_name: 'MarkingPenRegular'
+            font_size: '30sp'
+            text_size: self.size
+            halign: 'center'
+            valign: 'top'
+            size_hint: (1, None)    #Label is the size of the text
+            size: self.texture_size  #Label is the size of the text
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10 #Creates space on sides of text box
+        
+            Label:
+                text: 
+                    "The area within six nautical miles seaward of the high-water mark on the coast between, as western limit, a straight line drawn through beacons marked S.H.B.W.1 and S.H.B.2, respectively, and situated on Stompneus Point, and, as eastern limit, a straight line drawn through a beacon marked S.H.B.E and a beacon marked D.R., both situated on the remaining extent of Wilde Varkens Valley A, due south of Doctor’s Reef" 
+
+                size_hint_y: None                
+                text_size: self.width, None
+                height: self.texture_size[1]
+                color: 0.1, 0.1, 0.1, 1 
+                canvas.before:  
+                    Color:
+                        rgba: 0.9, 0.9, 0.9, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+        
+        BoxLayout:
+            size_hint: (1, 4)
+            orientation: 'horizontal'
+            padding: 5
+            spacing: 5
+
+            Image:
+                source: 'stompneusshelly.jpg'
+                center_x: self.parent.center_x 
+                center_y: self.parent.center_y +10 
+                #size_hint_y: None                   
+                #width: 100 
+
+<WestCoast>:
+    name: "westcoast" 
+    
+    BoxLayout:
+        orientation: 'vertical'
+                
+        BoxLayout:
+            size_hint: (1, 0.4)
+            #height: 6
+                
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition        
+            Button:
+                background_color: 0,0,0,0                
+                on_release:
+                    app.root.current = "fourth" 
+                    app.root.transition = FadeTransition()
+                 
+                Image:
+                    source: 'cross.png'  
+                    size_hint_y: None
+                    width: 50
+                    allow_stretch: True
+                    pos_hint: {'left':1, 'top':1}
+                    #pos:((self.width)/2.4,(self.top)/2.5)
+                    center_x: self.parent.center_x 
+                    center_y: self.parent.center_y 
+        
+        
+        Label: 
+            text: 'Saldanha Closed Area and West Coast National Park MPA'
+            color: 0.5, 0.5, 1, 1           
+            font_name: 'MarkingPenRegular'
+            font_size: '30sp'
+            text_size: self.size
+            halign: 'center'
+            valign: 'top'
+            size_hint: (1, None)    #Label is the size of the text
+            size: self.texture_size  #Label is the size of the text
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10 #Creates space on sides of text box
+        
+            Label:
+                text: 
+                    "The entire area within Saldanha Bay east of a straight line drawn through two beacons marked N.H.1 and N.H.2, respectively, and situated on the point known as North Head, and two beacons marked S.H.1 and S.H.2 respectively situated on the point known as South Head. No fishing of west coast rock lobster is allowed in Zones B and C of the Langebaan Lagoon." 
+
+                size_hint_y: None                
+                text_size: self.width, None
+                height: self.texture_size[1]
+                color: 0.1, 0.1, 0.1, 1 
+                canvas.before:  
+                    Color:
+                        rgba: 0.9, 0.9, 0.9, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+        
+        BoxLayout:
+            size_hint: (1, 4)
+            orientation: 'horizontal'
+            padding: 5
+            spacing: 5
+
+            Image:
+                source: 'westcoast.jpg'
+                center_x: self.parent.center_x 
+                center_y: self.parent.center_y +10 
+                #size_hint_y: None                   
+                #width: 100   
+                
