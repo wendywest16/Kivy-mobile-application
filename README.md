@@ -17,8 +17,8 @@ The following files were used to build the SQL version of the app:
 
 1. CrayfishSqlMat.py
 2. CrayfishSqlMat.kv
-3. RecCatches.py
-4. RecCatches.db
+3. RecCatches.py (creating the Sql database) 
+4. RecCatches.db 
 5. Buildozer.spec
 
 An example of the packaged .apk file is included 
