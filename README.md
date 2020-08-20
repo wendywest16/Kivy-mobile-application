@@ -9,7 +9,7 @@ I have recorded 3 videos that show 1) how the app runs on a cellphone, 2) a quic
 
 ## The following files were used to build the Firebase app:
 
-1. CrayfishFirebase.py
+1. CrayfishFirebase.py [link](Kivy-mobile-application/CrayfishFirebase.py)
 2. CrayfishFirebase.kv
 3. Buildozer.spec
 4. Video of a quick rundown of the app
